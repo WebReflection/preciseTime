@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "preciseTime",
+  "name": "precisetime",
   "description": "timing function for Rhino, node, browsers, natively present in JSC",
   "homepage": "https://github.com/WebReflection/preciseTime",
   "main": "./build/preciseTime.js",
