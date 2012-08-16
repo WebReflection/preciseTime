@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "name": "preciseTime",
+  "description": "timing function for Rhino, node, browsers, natively present in JSC",
+  "homepage": "https://github.com/WebReflection/preciseTime",
+  "main": "./build/preciseTime.js",
+  "keywords": ["benchmark", "timing", "node", "Rhino"],
+  "author": {
+    "name": "Andrea Giammarchi",
+    "web": "http://webreflection.blogspot.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WebReflection/preciseTime.git"
+  }
+}
