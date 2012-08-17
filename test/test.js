@@ -5,9 +5,9 @@
  *  https://github.com/WebReflection/preciseTime
  * --------------------------------------------- */
 
-// JSC has it right, kudos!
 !function(exports){
   var preciseTime = exports.preciseTime;
+  // JSC has it right, kudos!
   if (!preciseTime) {
     // all possibilities + inline "does it work?" check
     try {
