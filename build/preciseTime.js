@@ -36,9 +36,16 @@
     } catch(o_O) {
       // browsers or fallback
       // if this throw, this is not a JS env ...
+    if ('external' in exports && 'preciseTime' in exports.external){
+      // wraps cause window.external can't be directly referenced.
+      preciseTime = function(){
+        return +exports.external.preciseTime();
+      };
+    } else {
       (preciseTime = function preciseTime() {
         return new Date / 1000;
       })();
+    }
     }}}}}
     exports.preciseTime = preciseTime;
   }
