@@ -7,7 +7,7 @@
   var preciseTime = exports.preciseTime;
   if ('external' in exports && 'preciseTime' in exports.external){
   // wraps cause window.external can't be directly referenced.
-    preciseTime = function(){
+    preciseTime = exports.preciseTime = function(){
       return exports.external.preciseTime();
     }
   }
