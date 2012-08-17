@@ -3,10 +3,9 @@
  *  https://github.com/WebReflection/preciseTime
  * --------------------------------------------- */
 
-!function(exports){
-  var preciseTime = exports.preciseTime;
+!function(exports, preciseTime){
   // JSC has it right, kudos!
-  if (!preciseTime) {
+  if (!exports.preciseTime) {
     // all possibilities + inline "does it work?" check
     try {
       // W3C Performance instance
@@ -33,20 +32,18 @@
       (preciseTime = function preciseTime() {
         return java.lang.System.nanoTime() / 1000000000;
       })();
+    } catch(o_O) {try {
+      // IE via IEJST https://github.com/kentaromiura/IEJST
+      (preciseTime = function preciseTime(){
+        return +exports.external.preciseTime();
+      })();
     } catch(o_O) {
       // browsers or fallback
       // if this throw, this is not a JS env ...
-    if ('external' in exports && 'preciseTime' in exports.external){
-      // wraps cause window.external can't be directly referenced.
-      preciseTime = function(){
-        return +exports.external.preciseTime();
-      };
-    } else {
       (preciseTime = function preciseTime() {
         return new Date / 1000;
       })();
-    }
-    }}}}}
+    }}}}}}
     exports.preciseTime = preciseTime;
   }
 }(this);
